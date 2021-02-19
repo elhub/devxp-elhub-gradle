@@ -25,59 +25,56 @@
 <!-- ABOUT THE PROJECT -->
 ## About
 
-One to two paragraph statement about the project and what it does.
-
+This is the custom gradle distribution used by Elhub gradle projects. Having a custom gradle distribution allows us to 
+wrap common logic that is used in most or all projects into a single package and reuse this in all projeects.
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
+* None 
 
 ### Installation
 
-1. Clone the repo
+To build the custom distribution:
+
 ```sh
-git clone https://github.com/github_username/repo_name.git
-```
-2. Install NPM packages
-```sh
-npm install
+./gradlew buildDist
 ```
 
+To publish 
+```sh
+./gradlew artifactoryPublish
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how the project can be used. Screenshots, code examples and demos work well in this space. You may also link to
-more resources.
+To make use of elhub-gradle, edit your gradle/wrapper/gradle-wrapper.properties file and change your distributionUrl
+to:
+```
+distributionUrl=https\://<repository-server>/elhub-bin/elhub-gradle/elhub-gradle-<version>.zip
+```
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+Where repository-server is the artifact server being used and version is the latest version of elhub-gradle. You
+must have access to the artifact server in question, obviously.
 
 
 <!-- TESTING -->
 ## Testing
 
-Explain how to run the automated tests for this system if appropriate.
-
-```
-Give an example
-```
+N/A
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://jira.elhub.cloud/link-to-issues) for a list of proposed features (and known issues).
+See the
+[open issues](https://jira.elhub.cloud/browse/TD-1?jql=project%20%3D%20TD%20AND%20component%20IN%20(%22Dev%20Tools%22))
+for a list of proposed features and known issues (requires access to Elhub Jira).
 
 
 <!-- META -->
 ## Meta
 
-* [Relevant Link](https://elhub.cloud)
+N/A

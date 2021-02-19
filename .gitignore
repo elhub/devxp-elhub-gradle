@@ -86,3 +86,6 @@ screenshots/*
 /coverage
 /allure-report
 /allure-results
+
+# Ignore Gradle build output directory
+build
