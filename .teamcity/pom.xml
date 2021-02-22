@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <name>SonarPhab Config DSL Script</name>
-    <groupId>SonarPhab</groupId>
-    <artifactId>SonarPhab_dsl</artifactId>
+    <name>ElhubGradle Config DSL Script</name>
+    <groupId>ElhubGradle</groupId>
+    <artifactId>ElhubGradle_dsl</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>

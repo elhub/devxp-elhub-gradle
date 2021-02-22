@@ -7,7 +7,7 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.version
 import no.elhub.common.build.configuration.SonarScan
 
-val projectId = "dev-tools-elhub-gradle"
+val projectId = "no.elhub.common:common-elhub-gradle"
 version = "2020.2"
 
 project {
