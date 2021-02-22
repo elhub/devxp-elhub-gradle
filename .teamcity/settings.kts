@@ -31,6 +31,7 @@ project {
         )
 
         buildType(BuildType {
+            id("Assemble")
             name = "Assemble"
 
             vcs {
