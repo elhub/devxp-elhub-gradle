@@ -26,7 +26,14 @@ project {
 
     val buildChain = sequential {
 
-        // No good auto-test runner
+        buildType(
+            UnitTest(
+                UnitTest.Config(
+                    vcsRoot = DslContext.settingsRoot,
+                    type = projectType
+                )
+            )
+        )
 
         buildType(
             SonarScan(

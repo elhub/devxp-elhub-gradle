@@ -37,6 +37,17 @@ tasks.register("test", Exec::class) {
     commandLine("./gradlew", "--init-script", "../../main/resources/init.d/init.gradle", "tasks", "--all")
 }
 
+tasks.register("check") {
+    dependsOn(tasks.get("test"))
+}
+
+tasks.register("jacocoTestReport")
+
+/*
+ * Clean
+ */
+tasks.register("clean", Delete::class)
+
 /*
  * Publishing
  */
@@ -79,5 +90,5 @@ tasks.get("publish").dependsOn(tasks.get("artifactoryPublish"))
 tasks.register("teamCity", Exec::class) {
     description = "Compile the TeamCity settings"
     workingDir(".teamcity")
-    commandLine("mvn","compile")
+    commandLine("mvn", "compile")
 }
