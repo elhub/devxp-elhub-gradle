@@ -1,12 +1,14 @@
-# Project Name
+# elhub-gradle
 
 <!-- PROJECT SHIELDS -->
-<!--
-*** Add Project Shields here. Several of Elhubs systems provide shields, so why not use them to give info at a glance.
-*** [TeamCity Builds][SonarQube Quality Gate][SonarQube Vulnerabilities][SonarQube bugs][SonarQube smells][SonarQube Coverage]
--->
+![TeamCity Build](https://teamcity.elhub.cloud/app/rest/builds/buildType:(id:Test_TestDataGen_AutoRelease)/statusIcon)
+[![Quality Gate Status](https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=alert_status)](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
+[![Lines of Code](https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=ncloc)](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
 
-<!-- TABLE OF CONTENTS -->
+[![Vulnerabilities](https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=vulnerabilities)](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
+[![Bugs](https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=bugs)](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
+[![Code Smells](https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=code_smells)](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
+
 ## Table of Contents
 
 * [About](#about)
@@ -22,59 +24,66 @@
 * [Meta](#meta)
 
 
-<!-- ABOUT THE PROJECT -->
 ## About
 
 This is the custom gradle distribution used by Elhub gradle projects. Having a custom gradle distribution allows us to 
-wrap common logic that is used in most or all projects into a single package and reuse this in all projeects.
+wrap common logic that is used in most or all projects into a single package and reuse this in many projects. In practice,
+it means that for Kotlin and Java projects the
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 ### Prerequisites
-
-* None 
 
 ### Installation
 
 To build the custom distribution:
 
 ```sh
-./gradlew buildDist
+./gradlew assemble
 ```
 
 To publish 
 ```sh
-./gradlew artifactoryPublish
+./gradlew publish
 ```
 
-<!-- USAGE EXAMPLES -->
 ## Usage
 
 To make use of elhub-gradle, edit your gradle/wrapper/gradle-wrapper.properties file and change your distributionUrl
 to:
 ```
-distributionUrl=https\://<repository-server>/elhub-bin/elhub-gradle/elhub-gradle-<version>.zip
+distributionUrl=https\://jfrog.elhub.cloud/artifactory/elhub-bin/elhub-gradle/<version>/elhub-gradle-<version>.zip
 ```
 
-Where repository-server is the artifact server being used and version is the latest version of elhub-gradle. You
-must have access to the artifact server in question, obviously.
+The above assumes access to our jfrog server, of course; if you don't have that, you need to deploy the project to
+a package server and retrieve it from there.
 
+The benefit for an Elub gradle project, is that you can delete all the boilerplate gradle stuff (around
+70-80% of a typical build.gradle.kts file), and have them solely consist of identity information (group,
+name, version, description) and the list of dependencies.
 
-<!-- TESTING -->
+See the minimal example project in `src/test/resources`.
+
 ## Testing
 
-N/A
+Run `./gradlew test` which attempts to apply the init.gradle script on the example project in src/test/resources.
 
-<!-- ROADMAP -->
 ## Roadmap
 
 See the
-[open issues](https://jira.elhub.cloud/browse/TD-1?jql=project%20%3D%20TD%20AND%20component%20IN%20(%22Dev%20Tools%22))
-for a list of proposed features and known issues (requires access to Elhub Jira).
+[open issues](https://jira.elhub.cloud/issues/?jql=project%20%3D%20TD%20AND%20component%20%3D%20common-elhub-gradle%20AND%20resolution%20%3D%20Unresolved)
+for a list of proposed features (and known issues).
 
+## Contributing
 
-<!-- META -->
-## Meta
+Contributing, issues and feature requests are welcome. See the
+[Contributing](https://github.com/elhub.test-konfig/blob/main/CONTRIBUTING.md) file.
 
-N/A
+## Owners
+
+This project is developed by [Elhub](https://github.com/elhub). For the specific development group responsible for this
+code, see the [Codeowners](https://github.com/elhub/common-elhub-gradle/blob/main/CODEOWNERS) file.
+
+## License
+
+This project is [MIT](https://github.com/elhub/common-elhub-gradle/blob/main/LICENSE.md) licensed.
