@@ -66,7 +66,7 @@ artifactory {
     publish(delegateClosureOf<PublisherConfig> {
         repository(delegateClosureOf<GroovyObject> {
             setProperty("repoKey", project.findProperty("artifactoryRepository") ?: "elhub-bin-dev-local")
-            setProperty("username", project.findProperty("artifactoryUser") ?: "nouser")
+            setProperty("username", project.findProperty("artifactoryUsername") ?: "nouser")
             setProperty("password", project.findProperty("artifactoryPassword") ?: "nopass")
         })
         defaults(delegateClosureOf<GroovyObject> {
