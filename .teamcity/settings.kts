@@ -30,7 +30,8 @@ project {
             UnitTest(
                 UnitTest.Config(
                     vcsRoot = DslContext.settingsRoot,
-                    type = projectType
+                    type = projectType,
+                    generateAllureReport = false
                 )
             )
         )
