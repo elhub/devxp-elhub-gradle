@@ -34,7 +34,7 @@ project {
                     vcsRoot = DslContext.settingsRoot,
                     type = projectType,
                     sonarId = projectId,
-                    sonarProjectSources = "buildSrc"
+                    sonarProjectSources = "."
                 )
             )
         )
