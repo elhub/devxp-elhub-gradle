@@ -1,7 +1,10 @@
 {
     "exclude": [
         "(\\.idea$)",
-        "(^target/)"
+        "(\\.gradle$)",
+        "(^build/)",
+        "(^gradle/)",
+        "(target/)"
     ],
     "linters": {
         "nolint": {
@@ -14,7 +17,12 @@
             "type": "chmod"
         },
         "filename": {
-            "type": "filename"
+            "type": "filename",
+            "exclude": [
+                "(operations#env=test\\d)",
+                "(operations#env=exa\\d)",
+                "(operations#env=prod\\d)"
+            ]
         },
         "spelling": {
             "type": "spelling"
@@ -25,7 +33,8 @@
                 "1": "disabled",
                 "3": "disabled",
                 "5": "disabled"
-            }
+            },
+            "exclude": "(\\Makefile$)"
         },
         "checkstyle": {
             "type": "checkstyle",
@@ -61,10 +70,17 @@
             "type": "phutil-library",
             "include": "(\\.php$)"
         },
+        "ansible": {
+            "type": "ansible-lint",
+            "include": [
+                "(\\.yml$)",
+                "(\\.yaml$)"
+            ]
+        },
         "yamllint": {
             "type": "yamllint",
             "include": [
-                "(\\.yml$)",
+            "(\\.yml$)",
                 "(\\.yaml$)"
             ]
         },

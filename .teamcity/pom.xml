@@ -13,8 +13,8 @@
     </parent>
 
     <properties>
+        <common-build-configuration.version>0.13.4</common-build-configuration.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <common-build-configuration.version>[0.10.0,0.11.0)</common-build-configuration.version>
     </properties>
 
     <repositories>
