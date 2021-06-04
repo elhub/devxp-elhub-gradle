@@ -13,6 +13,7 @@ initscript {
         classpath "com.github.ben-manes:gradle-versions-plugin:0.38.0"
         classpath "com.adarshr:gradle-test-logger-plugin:3.0.0"
         classpath "io.qameta.allure:allure-gradle:2.8.1"
+        classpath "gradle.plugin.com.eden:orchidPlugin:0.21.1"
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.21.0"
     }
 
@@ -24,6 +25,7 @@ allprojects {
     apply plugin: 'jacoco'
     apply plugin: com.adarshr.gradle.testlogger.TestLoggerPlugin
     apply plugin: io.qameta.allure.gradle.AllurePlugin
+    apply plugin: com.eden.orchid.gradle.OrchidPlugin
     apply plugin: org.jfrog.gradle.plugin.artifactory.ArtifactoryPlugin
     apply plugin: 'maven-publish'
 
@@ -32,6 +34,11 @@ allprojects {
             url "https://jfrog.elhub.cloud/artifactory/elhub-mvn/"
         }
     }
+
+    dependencies {
+        orchidRuntime 'io.github.javaeden.orchid:OrchidAll:0.21.1'
+    }
+
 
     /*
      * Compile setup
@@ -115,6 +122,18 @@ allprojects {
                 "${allureVersion}/allure-commandline-${allureVersion}.zip"
     }
 
+    /*
+     * Orchid
+     */
+    orchid {
+        theme = "BsDoc"
+        srcDir = "docs"
+        destDir = "build/docs/orchid"
+    }
+
+    /*
+     * Publishing
+     */
     artifactoryPublish {
         skip = false //Skip build info analysis and publishing (false by default)
         contextUrl = 'http://repo.myorg.com/artifactory'
@@ -131,9 +150,6 @@ allprojects {
         clientConfig.publisher.minChecksumDeploySizeKb = 10
     }
 
-    /*
-     * Publishing
-     */
     publishing {
         publications {
             mavenJava(MavenPublication) {
