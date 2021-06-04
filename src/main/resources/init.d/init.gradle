@@ -168,6 +168,7 @@ allprojects {
             }
             defaults {
                 publications('mavenJava')
+                publishBuildInfo = (project.findProperty('artifactoryUsername') == "teamcity")
                 publishArtifacts = true
                 publishPom = true
             }
