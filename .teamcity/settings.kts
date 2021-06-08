@@ -11,6 +11,7 @@ import no.elhub.common.build.configuration.CodeReview
 import no.elhub.common.build.configuration.ProjectType
 import no.elhub.common.build.configuration.SonarScan
 import no.elhub.common.build.configuration.UnitTest
+import no.elhub.common.build.configuration.constants.GlobalTokens
 
 version = "2020.2"
 
