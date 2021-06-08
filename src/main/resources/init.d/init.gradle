@@ -72,7 +72,7 @@ allprojects {
                 attributes["Main-Class"] = mainClassName
             }
             from{
-                configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+                configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
             }
             exclude("META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA")
             with jar

@@ -1,10 +1,9 @@
 import groovy.lang.GroovyObject
-import org.jfrog.gradle.plugin.artifactory.dsl.ArtifactoryPluginConvention
 import org.jfrog.gradle.plugin.artifactory.dsl.PublisherConfig
 
 plugins {
     id("tech.harmonysoft.oss.custom-gradle-dist-plugin") version "1.7"
-    id("com.github.ben-manes.versions") version "0.38.0"
+    id("com.github.ben-manes.versions") version "0.39.0"
     id("com.jfrog.artifactory") version "4.21.0"
     id("maven-publish") apply true
 }
