@@ -50,8 +50,8 @@ To publish
 
 ## Usage
 
-To make use of elhub-gradle, edit your gradle/wrapper/gradle-wrapper.properties file and change your distributionUrl
-to:
+To make use of elhub-gradle within Elhub, edit your gradle/wrapper/gradle-wrapper.properties file and change your
+distributionUrl to:
 ```
 distributionUrl=https\://jfrog.elhub.cloud/artifactory/elhub-bin/elhub-gradle/<version>/elhub-gradle-<version>.zip
 ```
