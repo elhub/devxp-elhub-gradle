@@ -59,29 +59,6 @@ allprojects {
         }
     }
 
-    def mainClassName = project.findProperty('applicationMainClass')
-
-    if (mainClassName != null) {
-        tasks.register("fatJar", Jar) {
-            archiveBaseName.set(rootProject.name)
-            setZip64(true)
-            setDuplicatesStrategy(DuplicatesStrategy.EXCLUDE)
-            manifest {
-                attributes["Implementation-Title"] = rootProject.name
-                attributes["Implementation-Version"] = rootProject.version
-                attributes["Main-Class"] = mainClassName
-            }
-            from{
-                configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-            }
-            exclude("META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA")
-            with jar
-            mustRunAfter(tasks["jar"])
-        }
-
-        tasks["assemble"].dependsOn(tasks["fatJar"])
-    }
-
     /*
      * Test setup
      */
