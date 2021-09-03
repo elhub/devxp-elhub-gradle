@@ -44,7 +44,7 @@ To build the custom distribution:
 ./gradlew assemble
 ```
 
-To publish 
+To publish:
 ```sh
 ./gradlew publish
 ```
