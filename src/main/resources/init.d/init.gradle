@@ -103,7 +103,7 @@ allprojects {
      * Orchid
      */
     orchid {
-        theme = "BsDoc"
+        theme = "Elhub"
         srcDir = "docs"
         destDir = "build/docs/orchid"
     }

@@ -42,7 +42,8 @@ project {
                 SonarScan.Config(
                     vcsRoot = DslContext.settingsRoot,
                     type = projectType,
-                    sonarId = projectId
+                    sonarId = projectId,
+                    sonarProjectSources = "src/main/resources"
                 )
             )
         )
@@ -88,7 +89,8 @@ project {
             CodeReview.Config(
                 vcsRoot = DslContext.settingsRoot,
                 type = projectType,
-                sonarId = projectId
+                sonarId = projectId,
+                sonarProjectSources = "src/main/resources"
             )
         )
     )

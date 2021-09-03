@@ -1,12 +1,13 @@
 # elhub-gradle
 
-<!-- PROJECT SHIELDS -->
-![TeamCity Build](https://teamcity.elhub.cloud/app/rest/builds/buildType:(id:Test_TestDataGen_AutoRelease)/statusIcon)
-[![Quality Gate Status](https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=alert_status)](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
-[![Lines of Code](https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=ncloc)](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
-[![Vulnerabilities](https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=vulnerabilities)](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
-[![Bugs](https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=bugs)](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
-[![Code Smells](https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=code_smells)](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
+[<img src="https://img.shields.io/badge/repo-github-blue" alt=""/>](https://github.com/elhub/common-elhub-gradle)
+[<img src="https://img.shields.io/badge/issues-jira-orange" alt=""/>](https://jira.elhub.cloud/issues/?jql=project%20%3D%20%22Team%20Dev%22%20AND%20component%20%3D%20common-elhub-gradle%20AND%20status%20!%3D%20Done)
+[<img src="https://teamcity.elhub.cloud/app/rest/builds/buildType:(id:Common_CommonElhubGradle_AutoRelease)/statusIcon" alt=""/>](https://teamcity.elhub.cloud/project/Common_CommonElhubGradle?mode=builds#all-projects)
+[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=alert_status" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
+[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=ncloc" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
+[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=bugs" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
+[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=vulnerabilities" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
+[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=coverage" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
 
 ## Table of Contents
 
