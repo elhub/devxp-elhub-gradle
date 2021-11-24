@@ -9,7 +9,7 @@ initscript {
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0"
         classpath "com.github.ben-manes:gradle-versions-plugin:0.38.0"
         classpath "com.adarshr:gradle-test-logger-plugin:3.0.0"
         classpath "io.qameta.allure:allure-gradle:2.8.1"
@@ -36,7 +36,7 @@ allprojects {
     }
 
     dependencies {
-        orchidRuntime 'io.github.javaeden.orchid:OrchidAll:0.21.1'
+        orchidRuntimeOnly 'io.github.javaeden.orchid:OrchidAll:0.21.1'
     }
 
 
@@ -86,7 +86,7 @@ allprojects {
         theme = ThemeType.MOCHA
     }
 
-    def allureVersion = "2.13.9" // Version of the allure client
+    def allureVersion = "2.16.1" // Version of the allure client
 
     allure {
         version = allureVersion

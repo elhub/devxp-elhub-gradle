@@ -2,6 +2,9 @@ group = "no.elhub.example"
 description = "An example of a project used with elhub-gradle"
 
 dependencies {
+    val implementation by configurations
+    val testImplementation by configurations
+
     implementation(platform("no.elhub.common:common-bom:0.1.0"))
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     // Kotlin Platform
