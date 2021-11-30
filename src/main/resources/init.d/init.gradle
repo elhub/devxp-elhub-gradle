@@ -71,7 +71,7 @@ allprojects {
     }
 
     jacoco {
-        toolVersion = '0.8.4' // Has to be the same as TeamCity
+        toolVersion = '0.8.7' // Has to be the same as TeamCity
     }
 
     tasks.test {
@@ -167,7 +167,4 @@ allprojects {
         commandLine 'mvn', 'compile'
         description 'Compile the TeamCity settings'
     }
-
-    // this is temporary until jacoco is updated on TC
-    tasks["jacocoTestReport"].enabled = false
 }
