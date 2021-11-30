@@ -168,4 +168,6 @@ allprojects {
         description 'Compile the TeamCity settings'
     }
 
+    // this is temporary until jacoco is updated on TC
+    tasks["jacocoTestReport"].enabled = false
 }
