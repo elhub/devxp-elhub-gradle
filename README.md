@@ -9,21 +9,6 @@
 [<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=vulnerabilities" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
 [<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=coverage" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
 
-## Table of Contents
-
-* [About](#about)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Testing](#testing)
-* [Issues](link-to-issues)
-* [Contributing](link-to-contributing-file)
-* [License](link-to-license-file)
-* [Owners](link-to-codeowners-file)
-* [Meta](#meta)
-
-
 ## About
 
 This is the custom gradle distribution used by Elhub gradle projects. Having a custom gradle distribution allows us to 
@@ -69,12 +54,6 @@ See the minimal example project in `src/test/resources`.
 ## Testing
 
 Run `./gradlew test` which attempts to apply the init.gradle script on the example project in src/test/resources.
-
-## Roadmap
-
-See the
-[open issues](https://jira.elhub.cloud/issues/?jql=project%20%3D%20TD%20AND%20component%20%3D%20common-elhub-gradle%20AND%20resolution%20%3D%20Unresolved)
-for a list of proposed features (and known issues).
 
 ## Contributing
 
