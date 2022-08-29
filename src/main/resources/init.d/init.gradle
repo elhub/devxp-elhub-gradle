@@ -9,12 +9,12 @@ initscript {
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0"
-        classpath "com.github.ben-manes:gradle-versions-plugin:0.38.0"
-        classpath "com.adarshr:gradle-test-logger-plugin:3.0.0"
-        classpath "io.qameta.allure:allure-gradle:2.8.1"
-        classpath "gradle.plugin.com.eden:orchidPlugin:0.21.1"
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.21.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"
+        classpath "com.github.ben-manes:gradle-versions-plugin:0.42.0"
+        classpath "com.adarshr:gradle-test-logger-plugin:3.2.0"
+        classpath "io.qameta.allure.gradle.allure:allure-plugin:2.10.0"
+        classpath "io.qameta.allure.gradle.report:allure-report-plugin:2.10.0"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.29.0"
     }
 
 }
@@ -24,8 +24,8 @@ allprojects {
     apply plugin: com.github.benmanes.gradle.versions.VersionsPlugin
     apply plugin: 'jacoco'
     apply plugin: com.adarshr.gradle.testlogger.TestLoggerPlugin
-    apply plugin: io.qameta.allure.gradle.AllurePlugin
-    apply plugin: com.eden.orchid.gradle.OrchidPlugin
+    apply plugin: io.qameta.allure.gradle.allure.AllurePlugin
+    apply plugin: io.qameta.allure.gradle.download.AllureDownloadPlugin
     apply plugin: org.jfrog.gradle.plugin.artifactory.ArtifactoryPlugin
     apply plugin: 'maven-publish'
 
@@ -34,11 +34,6 @@ allprojects {
             url "https://jfrog.elhub.cloud/artifactory/elhub-mvn/"
         }
     }
-
-    dependencies {
-        orchidRuntimeOnly 'io.github.javaeden.orchid:OrchidAll:0.21.1'
-    }
-
 
     /*
      * Compile setup
@@ -86,7 +81,7 @@ allprojects {
         theme = ThemeType.MOCHA
     }
 
-    def allureVersion = "2.16.1" // Version of the allure client
+    def allureVersion = "2.19.0" // Version of the allure comandline client
 
     allure {
         version = allureVersion
@@ -95,17 +90,6 @@ allprojects {
         useJUnit5 {
             version = allureVersion
         }
-        downloadLink = "https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/" +
-                "${allureVersion}/allure-commandline-${allureVersion}.zip"
-    }
-
-    /*
-     * Orchid
-     */
-    orchid {
-        theme = "Elhub"
-        srcDir = "docs"
-        destDir = "build/docs/orchid"
     }
 
     /*
@@ -113,7 +97,7 @@ allprojects {
      */
     artifactoryPublish {
         skip = false //Skip build info analysis and publishing (false by default)
-        contextUrl = 'http://repo.myorg.com/artifactory'
+        contextUrl = 'https://jfrog.example.com/artifactory'
         publications('a', 'b', 'c')
         properties = ['qa.level': 'basic', 'q.os': 'win32, deb, osx']
         properties {
@@ -136,7 +120,7 @@ allprojects {
     }
 
     artifactory {
-        contextUrl = project.findProperty('artifactoryUri') ?: "http://jfrog.example.com/artifactory"
+        contextUrl = project.findProperty('artifactoryUri') ?: "https://jfrog.example.com/artifactory"
         publish {
             repository {
                 repoKey = project.findProperty('artifactoryRepository') ?: "unknownrepo"
@@ -167,4 +151,5 @@ allprojects {
         commandLine 'mvn', 'compile'
         description 'Compile the TeamCity settings'
     }
+
 }

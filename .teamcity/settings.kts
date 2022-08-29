@@ -17,7 +17,7 @@ version = "2022.04"
 
 project {
 
-    val projectId = "no.elhub.common:common-elhub-gradle"
+    val projectId = "no.elhub.devxp:devxp-elhub-gradle"
     val projectType = ProjectType.GRADLE
     val artifactoryRepository = "elhub-bin-release-local"
 

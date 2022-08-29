@@ -1,13 +1,13 @@
-# elhub-gradle
+# devxp-elhub-gradle
 
-[<img src="https://img.shields.io/badge/repo-github-blue" alt=""/>](https://github.com/elhub/common-elhub-gradle)
-[<img src="https://img.shields.io/badge/issues-jira-orange" alt=""/>](https://jira.elhub.cloud/issues/?jql=project%20%3D%20%22Team%20Dev%22%20AND%20component%20%3D%20common-elhub-gradle%20AND%20status%20!%3D%20Done)
-[<img src="https://teamcity.elhub.cloud/app/rest/builds/buildType:(id:Common_CommonElhubGradle_AutoRelease)/statusIcon" alt=""/>](https://teamcity.elhub.cloud/project/Common_CommonElhubGradle?mode=builds#all-projects)
-[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=alert_status" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
-[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=ncloc" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
-[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=bugs" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
-[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=vulnerabilities" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
-[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.common%3Acommon-elhub-gradle&metric=coverage" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.common%3Acommon-elhub-gradle)
+[<img src="https://img.shields.io/badge/repo-github-blue" alt=""/>](https://github.com/elhub/devxp-elhub-gradle)
+[<img src="https://img.shields.io/badge/issues-jira-orange" alt=""/>](https://jira.elhub.cloud/issues/?jql=project%20%3D%20%22Team%20Dev%22%20AND%20component%20%3D%20devxp-elhub-gradle%20AND%20status%20!%3D%20Done)
+[<img src="https://teamcity.elhub.cloud/app/rest/builds/buildType:(id:DexXp_DexXpElhubGradle_AutoRelease)/statusIcon" alt=""/>](https://teamcity.elhub.cloud/project/DexXp_DexXpElhubGradle?mode=builds#all-projects)
+[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.devxp%3Adevxp-elhub-gradle&metric=alert_status" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.devxp%3Adevxp-elhub-gradle)
+[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.devxp%3Adevxp-elhub-gradle&metric=ncloc" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.devxp%3Adevxp-elhub-gradle)
+[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.devxp%3Adevxp-elhub-gradle&metric=bugs" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.devxp%3Adevxp-elhub-gradle)
+[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.devxp%3Adevxp-elhub-gradle&metric=vulnerabilities" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.devxp%3Adevxp-elhub-gradle)
+[<img src="https://sonar.elhub.cloud/api/project_badges/measure?project=no.elhub.devxp%3Adevxp-elhub-gradle&metric=coverage" alt=""/>](https://sonar.elhub.cloud/dashboard?id=no.elhub.devxp%3Adevxp-elhub-gradle)
 
 ## About
 
@@ -63,8 +63,8 @@ Contributing, issues and feature requests are welcome. See the
 ## Owners
 
 This project is developed by [Elhub](https://github.com/elhub). For the specific development group responsible for this
-code, see the [Codeowners](https://github.com/elhub/common-elhub-gradle/blob/main/CODEOWNERS) file.
+code, see the [Codeowners](https://github.com/elhub/devxp-elhub-gradle/blob/main/CODEOWNERS) file.
 
 ## License
 
-This project is [MIT](https://github.com/elhub/common-elhub-gradle/blob/main/LICENSE.md) licensed.
+This project is [MIT](https://github.com/elhub/devxp-elhub-gradle/blob/main/LICENSE.md) licensed.
