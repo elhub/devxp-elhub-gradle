@@ -25,72 +25,57 @@ project {
         param("teamcity.ui.settings.readOnly", "true")
     }
 
-    val buildChain = sequential {
-
-        buildType(
-            UnitTest(
-                UnitTest.Config(
-                    vcsRoot = DslContext.settingsRoot,
-                    type = projectType,
-                    generateAllureReport = false
-                )
-            )
+    val unitTest = UnitTest(
+        UnitTest.Config(
+            vcsRoot = DslContext.settingsRoot,
+            type = projectType
         )
+    )
 
-        buildType(
-            SonarScan(
-                SonarScan.Config(
-                    vcsRoot = DslContext.settingsRoot,
-                    type = projectType,
-                    sonarId = projectId,
-                    sonarProjectSources = "src/main/resources"
-                )
-            )
-        )
+    val sonarScanConfig = SonarScan.Config(
+        vcsRoot = DslContext.settingsRoot,
+        type = projectType,
+        sonarId = projectId,
+        sonarProjectSources = "src/main/resources"
+    )
 
-        buildType(
-            Assemble(
-                Assemble.Config(
-                    vcsRoot = DslContext.settingsRoot,
-                    type = projectType
-                )
-            )
-        )
-
-        val githubAuth = SshAgent {
-            teamcitySshKey = "teamcity_github_rsa"
-            param("secure:passphrase", GlobalTokens.githubSshPassphrase)
+    val sonarScan = SonarScan(sonarScanConfig) {
+        dependencies {
+            snapshot(unitTest) { }
         }
-
-        buildType(
-            AutoRelease(
-                AutoRelease.Config(
-                    vcsRoot = DslContext.settingsRoot,
-                    type = projectType,
-                    sshAgent = githubAuth,
-                    repository = artifactoryRepository
-                )
-            ) {
-                triggers {
-                    vcs {
-                        branchFilter = "+:<default>"
-                        quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
-                    }
-                }
-            }
-        )
-
     }
 
-    buildChain.buildTypes().forEach { buildType(it) }
+    val assemble = Assemble(
+        Assemble.Config(
+            vcsRoot = DslContext.settingsRoot,
+            type = projectType
+        )
+    ) {
+        dependencies {
+            snapshot(sonarScan) { }
+        }
+    }
+
+    val autoRelease = AutoRelease(
+        AutoRelease.Config(
+            vcsRoot = DslContext.settingsRoot,
+            type = projectType,
+            repository = artifactoryRepository
+        )
+    ) {
+        dependencies {
+            snapshot(assemble) { }
+        }
+    }
+
+    listOf(unitTest, sonarScan, assemble, autoRelease).forEach { buildType(it) }
 
     buildType(
         CodeReview(
             CodeReview.Config(
                 vcsRoot = DslContext.settingsRoot,
                 type = projectType,
-                sonarId = projectId,
-                sonarProjectSources = "src/main/resources"
+                sonarScanConfig = sonarScanConfig,
             )
         )
     )
