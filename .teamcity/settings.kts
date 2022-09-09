@@ -28,7 +28,8 @@ project {
     val unitTest = UnitTest(
         UnitTest.Config(
             vcsRoot = DslContext.settingsRoot,
-            type = projectType
+            type = projectType,
+            generateAllureReport = false,
         )
     )
 
@@ -37,7 +38,6 @@ project {
         type = projectType,
         sonarId = projectId,
         sonarProjectSources = "src/main/resources",
-        generateAllureReport = false,
     )
 
     val sonarScan = SonarScan(sonarScanConfig) {
