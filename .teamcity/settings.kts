@@ -67,6 +67,12 @@ project {
         dependencies {
             snapshot(assemble) { }
         }
+        triggers {
+            vcs {
+                branchFilter = "+:<default>"
+                quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_DEFAULT
+            }
+        }
     }
 
     listOf(unitTest, sonarScan, assemble, autoRelease).forEach { buildType(it) }
