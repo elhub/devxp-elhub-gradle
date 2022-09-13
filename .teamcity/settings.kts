@@ -16,8 +16,8 @@ import no.elhub.devxp.build.configuration.constants.GlobalTokens
 version = "2022.04"
 
 project {
-
-    val projectId = "no.elhub.devxp:devxp-elhub-gradle"
+    val projectName = "devxp-elhub-gradle"
+    val projectId = "no.elhub.devxp:$projectName"
     val projectType = ProjectType.GRADLE
     val artifactoryRepository = "elhub-bin-release-local"
 
