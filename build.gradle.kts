@@ -91,3 +91,4 @@ tasks.register("teamCity", Exec::class) {
     workingDir(".teamcity")
     commandLine("mvn", "compile")
 }
+    implementation(platform("no.elhub.test:test-bom:34.1.0"))
