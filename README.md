@@ -11,9 +11,12 @@
 
 ## About
 
-This is the custom gradle distribution used by Elhub gradle projects. Having a custom gradle distribution allows us to 
-wrap common logic that is used in most or all projects into a single package and reuse this in many projects. In practice,
-it means that for Kotlin and Java projects the
+**DEPRECATED**
+
+This was the custom gradle distribution used by Elhub gradle projects. Having a custom gradle distribution allows us to 
+wrap common logic that is used in most or all projects into a single package and reuse this in many projects.
+
+Support for init scripts in gradle is not great, though, and we found multiple things we wanted to do were either difficult or in pracitce impossible to carry out in kts scripts. Consequently, we decided to use [gradle plugins instead](https://github.com/elhub/devxp-elhub-gradle-plugins).
 
 ## Getting Started
 
