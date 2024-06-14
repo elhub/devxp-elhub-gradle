@@ -1,3 +1,6 @@
+> [!WARNING]  
+> This project has been archived and is no longer being actively developed by Elhub.
+
 # devxp-elhub-gradle
 
 [<img src="https://img.shields.io/badge/repo-github-blue" alt=""/>](https://github.com/elhub/devxp-elhub-gradle)
