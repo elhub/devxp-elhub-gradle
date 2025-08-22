@@ -1,13 +1,18 @@
-# @elhub/devxp-elhub-gradle
+# Changelog
 
-## 0.3.7
+All notable changes to this project will be documented in this file.
 
-### Minor Changes
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.5.0] - 2025-01-29
+
+### Changed
 
 - This is a dummy changelog added to the project so that it can be used for testing elhub/devxp-auto-changelog.
 
-## 0.1.0
+## [0.1.0] - 2025-01-24
 
-### Patch Changes
+### Changed
 
-- fix(Dummypicker): This is a demo comment.
+- This is a demo comment.
